@@ -27,7 +27,14 @@ export default class ExpenseList extends Component {
     render() {
         return (
             <ul className='list-group'>
-                {}
+                {this.state.expenses.map((expenses) => (
+                    <ExpenseItem
+                        id={expenses.id}
+                        name={expenses.name}
+                        cost={expenses.cost}
+                    >
+                    </ExpenseItem>
+                ))}
             </ul>
         )
     }

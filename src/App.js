@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 import Budget from './Components/Budget';
 import Remaining from './Components/Remaining';
 import ExpenseTotal from './Components/ExpenseTotal';
 import ExpenseList from './Components/ExpenseList';
+import AddExpenseForm from './Components/AddExpenseForm';
 
 export default class App extends Component {
   constructor(props) {
@@ -29,6 +31,16 @@ export default class App extends Component {
           </div>
           <div className='col mt-3'>
             <ExpenseTotal expenseTotal={this.state.budget - this.state.remaining}></ExpenseTotal>
+          </div>
+        </div>
+        <div className='row mt-3'>
+          <div className='col-sm'>
+            <ExpenseList></ExpenseList>
+          </div>
+          <div className='row mt-3'>
+            <div className='col-sm'>
+            <AddExpenseForm></AddExpenseForm>
+            </div>
           </div>
         </div>
       </div>
